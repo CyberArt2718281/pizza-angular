@@ -5,12 +5,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -20,16 +16,19 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pizza-angular'`, () => {
+  it('should have products array', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pizza-angular');
+    expect(app.products).toBeDefined();
+    expect(app.products.length).toBeGreaterThan(0);
   });
 
-  it('should render title', () => {
+  it('should render pizza products', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('pizza-angular app is running!');
+    expect(compiled.querySelector('h2')?.textContent).toContain(
+      'Выберите свою любимую пиццу'
+    );
   });
 });

@@ -1,0 +1,9 @@
+$main-color: rgb(185, 145, 80);
+$second-color: rgb(255, 175, 24);
+$third-color: rgb(56, 36, 0);
+
+@mixin flex-box() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

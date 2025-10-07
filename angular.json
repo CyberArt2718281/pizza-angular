@@ -10,6 +10,9 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": "ru-RU"
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -67,6 +70,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "liveReload": true,
+            "watch": true,
+            "poll": 1000
+          },
           "configurations": {
             "production": {
               "browserTarget": "pizza-angular:build:production"
@@ -103,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a05671b7-7358-4bf8-aa6f-7c891472e002"
   }
 }

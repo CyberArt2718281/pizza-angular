@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+@font-face {
+  font-family: Muller-ExtraBold;
+  src: url("./assets/fonts/MullerExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Muller-Bold;
+  src: url("./assets/fonts/MullerBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Muller-Regular;
+  src: url("./assets/fonts/MullerRegular.otf") format("opentype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Muller-Regular, sans-serif;
+}
+
+.button {
+  background-color: $second-color;
+  width: 224px;
+  font-size: 16px;
+  color: $third-color;
+  font-family: Muller-Bold, sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 22px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in;
+  &:hover {
+    background-color: А#8b5f0c;
+    color: #fff;
+  }
+}
+
+.burger {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
+img {
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
