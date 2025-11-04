@@ -1,25 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {TuiRootModule} from "@taiga-ui/core";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ProductComponent } from './components/product/product.component';
-import { TitleComponent } from './components/title/title.component';
-import { PatternInputDirective } from './directives/pattern-input.directive';
-import { IsChickenDirective } from './directives/is-chicken.directive';
-import { ChickenDescriptionPipe } from './pipes/chicken-description.pipe';
-import { WordUpperPipe } from './pipes/word-upper.pipe';
-import { ChickenProductsPipe } from './pipes/chicken-products.pipe';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 
-
+import {HttpClientModule} from '@angular/common/http';
+import {CoreModule} from './core/core.module';
+import {FooterComponent} from './shared/layout/footer/footer.component';
+import {HeaderComponent} from './shared/layout/header/header.component';
+import {LayoutComponent} from './views/layout.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, ProductComponent, TitleComponent, PatternInputDirective, IsChickenDirective, ChickenDescriptionPipe, WordUpperPipe, ChickenProductsPipe, ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, LayoutComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    CoreModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatMenuModule, MatIconModule, TuiRootModule],
   providers: [],
-  bootstrap: [AppComponent,HeaderComponent,FooterComponent ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

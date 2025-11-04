@@ -1,0 +1,17 @@
+.product {
+  padding: 80px 0 120px 0;
+  .products-title {
+    font-size: 35px;
+    font-family: Muller-Bold, sans-serif;
+    color: rgb(189, 152, 92);
+    text-align: center;
+  }
+  .products-items {
+    gap: 20px;
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+}

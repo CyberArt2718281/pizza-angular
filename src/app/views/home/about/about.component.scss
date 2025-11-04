@@ -1,0 +1,71 @@
+@import '../../../../variables.scss';
+
+
+
+
+
+.order {
+  padding: 120px 0 115px 0;
+  overflow: hidden;
+  position: relative;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .order-text {
+      display: flex;
+      flex-direction: column;
+      gap:20px;
+      max-width: 600px;
+      justify-content: space-between;
+  align-items: center;
+      .order-text-title {
+        text-align: center;
+        color:$main-color;
+        font-size: 35px;
+        font-family: Muller-ExtraBold, sans-serif;
+        line-height: 1.286;
+        margin-bottom: 10px;
+      }
+      .order-text-message {
+        font-size: 16px;
+        color: $main-color;
+        line-height: 1.5;
+      }
+    }
+    .order-form {
+      margin-left: 122px;
+      max-width: 330px;
+      .order-input {
+        border: 1px solid $main-color;
+        background-color: #fff;
+        width: 330px;
+        font-size: 18px;
+        color: rgb(152, 127, 85);
+        padding: 23px 22px 24px 22px;
+        margin-bottom: 24px;
+        box-sizing: border-box;
+        height: 60px;
+        outline: none;
+        border-radius: 10px;
+        &::placeholder {
+          color: rgb(203, 168, 110);
+        }
+      }
+    }
+    button {
+      width: 330px;
+      height: 60px;
+    }
+    .order-image {
+      width: 282px;
+      position: relative;
+      margin-left: 78px;
+      img {
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+      }
+    }
+  }
+}

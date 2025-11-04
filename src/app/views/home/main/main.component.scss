@@ -1,0 +1,154 @@
+@import '../../../../variables.scss';
+@import "./app.component.adaptive";
+
+
+
+
+
+.title {
+  max-width: 662px;
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.main {
+  margin: 132px 0 81px 0;
+  .container {
+    position: relative;
+    @include flex-box();
+    .main-info {
+      max-width: 622px;
+      h1 {
+        font-size: 45px;
+        font-family: Muller-ExtraBold, sans-serif;
+        line-height: 1.222;
+      }
+      .main-advantages {
+        margin-top: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .advantage {
+          max-width: 306px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 47px;
+          .advantage-text {
+            margin-left: 16px;
+            .advantage-title {
+              font-size: 16px;
+              font-family: Muller-ExtraBold, sans-serif;
+              color: $second-color;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+            }
+            .advantage-description {
+              font-size: 16px;
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .main-action {
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+.double-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: $main-color;
+  span {
+    color: #ffaf18;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.white-popup {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.hvr-shutter-out-vertical:before,
+.hvr-shutter-out-horizontal:before,
+.hvr-rectangle-out:before {
+  background: #8f6613;
+  box-shadow: 0 0 5px 2px #8f6613;
+  border-radius: 10px;
+}
+
+.parallax-window {
+  min-height: 800px;
+  background: transparent;
+}
+
+canvas {
+  display: block;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #b61924;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.cookie {
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 330px;
+  color: $third-color;
+  display: none;
+  font-family: Panton-Regular, sans-serif;
+  .cookie-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Panton-ExtraBold, sans-serif;
+    .cookie-accept svg {
+      width: 20px;
+      height: 20px;
+      fill: $second-color;
+      cursor: pointer;
+    }
+  }
+  .cookie-text {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+  .cookie-button .button {
+    border: 0;
+    outline: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+@import "app.component.adaptive";

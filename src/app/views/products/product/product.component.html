@@ -1,0 +1,51 @@
+<section
+  class="product parallax-window"
+>
+  <div class="container">
+    <h2 class="product-title">Описание пиццы </h2>
+
+    <div class="product-item" *ngIf='!loading' >
+      <div class="product-item wow animate__fadeInUp">
+        <div
+          *ngIf="product.image; then productImageBlock; else dafaultImageBlock"
+        ></div>
+        <ng-template #productImageBlock>
+          <div class="product-image">
+            <img src="{{ product.image }}" alt="{{ product.title }}" />
+          </div>
+        </ng-template>
+
+        <ng-template #dafaultImageBlock>
+          <div class="product-image">
+            <img src="assets/images/pizza-form.png" alt="{{ product.title }}" />
+          </div>
+        </ng-template>
+        <custom-title [title]="product.title "></custom-title>
+        <div class="product-text">{{ product.description}}</div>
+        <span>{{cartProductService.getCommonCount(getProductIdString())}}</span>
+        <div class="product-action" >
+          <a
+            class="button product-button add-to-cart-pizza hvr-shutter-out-horizontal"
+            (click)="addToCart()"
+            [routerLink]="'/order'"
+            [queryParams]="{product:product.title}"
+          >
+            В корзину
+          </a>
+
+          <a
+            class="button btn-details add-to-cart-pizza hvr-shutter-out-horizontal"
+            [routerLink]="'/products'"
+          >
+            Все пиццы
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loading" class="loader-bg">
+      <div class="loader">
+
+      </div>
+    </div>
+  </div>
+</section>

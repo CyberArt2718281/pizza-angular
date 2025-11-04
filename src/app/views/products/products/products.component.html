@@ -1,0 +1,25 @@
+<section
+  class="product parallax-window"
+  data-parallax="scroll"
+
+  id="products"
+>
+  <div class="container">
+    <h2 class="products-title">Выберите свою любимую пиццу </h2>
+
+    <div class="products-items">
+      <product-card
+        *ngFor="let product of products ;let i=index; trackBy: trackByIndex"
+        [product]="product"
+        (addToCartEvent)="addToCart($event)"
+      >
+      </product-card>
+    </div>
+    <div *ngIf="loading" class="loader-bg">
+      <div class="loader">
+
+      </div>
+    </div>
+
+  </div>
+</section>

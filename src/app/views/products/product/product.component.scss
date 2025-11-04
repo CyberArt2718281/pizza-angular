@@ -1,0 +1,38 @@
+@import "../../../../variables.scss";
+.product {
+  padding: 80px 0 120px 0;
+  .product-title {
+    font-size: 35px;
+    font-family: Muller-Bold, sans-serif;
+    color: rgb(189, 152, 92);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    .product-action {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      place-items: center;
+      .btn-details {
+        margin-top: 10px;
+        background: $third-color;
+        color: white;
+        &:hover {
+          background: $main-color;
+          color: $third-color;
+        }
+      }
+    }
+  }
+}
+
+.product-item > * {
+  display: block;
+  margin-top: 10px;
+}

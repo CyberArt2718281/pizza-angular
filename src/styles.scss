@@ -34,6 +34,8 @@ body {
 }
 
 .button {
+  display: inline-block;
+  text-decoration: none;
   background-color: $second-color;
   width: 224px;
   font-size: 16px;
@@ -46,10 +48,11 @@ body {
   text-align: center;
   box-sizing: border-box;
   border-radius: 10px;
-  text-decoration: none;
+
   transition: background-color 0.2s ease-in;
+
   &:hover {
-    background-color: А#8b5f0c;
+    background-color: #8b5f0c;
     color: #fff;
   }
 }
@@ -63,9 +66,44 @@ body {
 }
 
 img {
-    image-rendering: auto;
-    image-rendering: -webkit-optimize-contrast;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-  }
+  image-rendering: auto;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.loader-bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+  z-index: 99999999;
+}
+
+.loader{
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #ffaf18;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";

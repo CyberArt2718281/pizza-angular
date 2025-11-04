@@ -1,0 +1,86 @@
+<section class="order" #order id="order">
+  <div class="container">
+    <div class="order-text wow animate__backInLeft">
+      <div class="order-text-title double-title">
+        <a routerLink="/order" [queryParams]="{product:formValues.product + '1'}"
+           style="color:#ffaf18; text-decoration:none;">Хватит думать!</a> Доставим заказ за 30 минут!
+
+      </div>
+      <div class="order-text-message">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления
+        заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ
+        бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался
+        голодный!
+      </div>
+    </div>
+    <form class="order-form wow animate__fadeInDown">
+<!--      <span class="p-float-label">-->
+<!--        <input type="text" pInputText id="float-input"-->
+<!--               name="product"-->
+<!--               [value]="formValues.product"-->
+<!--               [(ngModel)]="formValues.product">-->
+<!--        <label for="float-input">Пицца</label>-->
+<!--      </span>-->
+<!--      <span class="p-float-label">-->
+<!--        <input type="text" pInputText id="float-input"-->
+<!--               [(ngModel)]="formValues.address"-->
+<!--               name="address">-->
+<!--        <label for="float-input">Адрес доставки</label>-->
+<!--      </span>-->
+<!--      <span class="p-float-label">-->
+<!--        <input type="text" pInputText id="float-input"-->
+<!--               name="phone"-->
+<!--               pattern="^\+7\s\(9\d{2}\)\s\d{3}-\d{2}-\d{2}"-->
+<!--               required-->
+<!--               [(ngModel)]="formValues.phone">-->
+<!--        <label for="float-input">Телефон</label>-->
+<!--      </span>-->
+      <input
+        type="text"
+        placeholder="Пицца"
+        class="order-input"
+
+        [value]="formValues.product"
+        [(ngModel)]="formValues.product"
+        name="product"
+        id="product-input"
+        pInputText
+      />
+      <input
+        type="text"
+        placeholder="Адрес доставки"
+        class="order-input"
+        id="address-input"
+
+        [(ngModel)]="formValues.address"
+        name="address"
+        pInputText
+      />
+      <input
+        type="text"
+        placeholder="+7 (999) 999-99-99"
+        class="order-input"
+        id="phone-input"
+        pattern="^\+7\s\(9\d{2}\)\s\d{3}-\d{2}-\d{2}"
+        required
+        [(ngModel)]="formValues.phone"
+        name="phone"
+        pInputText
+      />
+
+
+      <button
+        tuiButton
+        id="create-order"
+        type="button"
+        (click)="createOrder()"
+      >
+        Оформить заказ
+      </button>
+    </form>
+    <div class="order-image wow animate__backInRight">
+      <img ngSrc="assets/images/pizza-form.png" alt="pizza" height="454" width="410"/>
+    </div>
+  </div>
+</section>

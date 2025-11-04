@@ -1,0 +1,43 @@
+<div class="product-item wow animate__fadeInUp">
+  <div
+    *ngIf="product.image; then productImageBlock; else dafaultImageBlock"
+  ></div>
+  <ng-template #productImageBlock>
+    <div class="product-image">
+      <img src="{{ product.image }}" alt="{{ product.title }}" />
+    </div>
+  </ng-template>
+
+  <ng-template #dafaultImageBlock>
+    <div class="product-image">
+      <img src="assets/images/pizza-form.png" alt="{{ product.title }}" />
+    </div>
+  </ng-template>
+  <custom-title [title]="product.title | uppercase"></custom-title>
+  <div class="product-text">{{ product.description | wordUpper:["сыр","томат",'сос']}}</div>
+  <span>{{cartProductService.getCommonCount(getProductId())}}</span>
+  <div class="product-action" #elem>
+    <a
+      class="button product-button add-to-cart-pizza hvr-shutter-out-horizontal"
+      (click)="addToCart()"
+      [routerLink]="'/order'"
+      [queryParams]="{product:product.title}"
+    >
+      В корзину
+    </a>
+
+    <a
+      class="button btn-details add-to-cart-pizza hvr-shutter-out-horizontal"
+
+      [routerLink]="['/products',product.id ]"
+
+    >
+      подробнее
+    </a>
+  </div>
+<!--  <span >-->
+<!--    <small>Редактировано:</small>-->
+<!--    {{ product-card.dateTime | date:'full' | uppercase }}-->
+<!--  </span>-->
+
+</div>
