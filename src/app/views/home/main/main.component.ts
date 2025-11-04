@@ -3,7 +3,7 @@ import {Subject, Subscription} from 'rxjs';
 import {CartService} from '../../../shared/services/cart.service';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {PopupComponent} from "../../../shared/components/popup/popup.component";
-import { environment } from '../../../../environments/environment'
+import {environment} from '../../../../environments/environment'
 
 
 @Component({
@@ -73,7 +73,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.popupComponent.open()
+    // this.popupComponent.open()
     // const modalRef = this.modalService.open(PopupComponent, {});
     // modalRef.componentInstance.data = 'Вы точно хотите перейти на страницу пицц';
     // this.modalService.open(this.popup, {})
