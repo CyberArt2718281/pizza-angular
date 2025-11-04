@@ -74,6 +74,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     // this.popupComponent.open()
+    console.log("main");
     // const modalRef = this.modalService.open(PopupComponent, {});
     // modalRef.componentInstance.data = 'Вы точно хотите перейти на страницу пицц';
     // this.modalService.open(this.popup, {})
